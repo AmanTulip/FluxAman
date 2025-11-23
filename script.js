@@ -125,7 +125,7 @@ async function createPost() {
     }
 
     try {
-        const response = await fetch('http://localhost:3000/api/posts', {
+        const response = await fetch('/api/posts', {
             method: 'POST',
             body: formData
         });
@@ -141,7 +141,7 @@ async function createPost() {
         }
     } catch (error) {
         console.error('Error creating post:', error);
-        alert(`Error creating post: ${error.message}. Make sure the server is running (node server.js) and you are accessing via http://localhost:3000.`);
+        alert(`Error creating post: ${error.message}.`);
     }
 }
 
@@ -195,7 +195,7 @@ function renderPost(post) {
 
 async function loadPosts() {
     try {
-        const response = await fetch('http://localhost:3000/api/posts');
+        const response = await fetch('/api/posts');
         const posts = await response.json();
         // Reverse to show newest first if API returns oldest first, 
         // but our API appends to top of array, so we might need to check order.
