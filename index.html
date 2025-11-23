@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FluxAman</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+
+    <div class="bg-blob"></div>
+
+    <div class="container">
+
+        <!-- LEFT PANEL: Profile Info -->
+        <aside class="profile-section">
+            <img src="Photo.png" alt="Profile" class="profile-pic">
+            <h1 class="name">Aman Kumar</h1>
+            <p class="role">UI/UX Designer & Developer</p>
+
+            <div class="location">
+                <i class="fa-solid fa-location-dot"></i> Delhi, India
+            </div>
+
+            <div class="social-links">
+                <a href="https://github.com/FluxAman" class="social-btn"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/FluxAman" class="social-btn"><i
+                        class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://youtube.com/@amanraoo?si=ZMXvrQxN1KgPMGWL" class="social-btn"><i
+                        class="fa-brands fa-brands fa-youtube"></i></a>
+                <a href="#" class="social-btn"><i class="fa-solid fa-envelope"></i></a>
+                <button id="admin-trigger" class="social-btn" onclick="toggleAdmin()"><i
+                        class="fa-solid fa-lock"></i></button>
+            </div>
+        </aside>
+
+        <!-- RIGHT PANEL: Content Feed -->
+        <main class="content-section">
+
+            <!-- Education Card -->
+            <div class="card delay-1">
+                <div class="section-title">Education</div>
+                <div class="edu-item">
+                    <div class="degree">Master in Interaction Design</div>
+                    <div class="school">California College of the Arts • 2021-2023</div>
+                </div>
+                <div class="edu-item" style="margin-top:15px">
+                    <div class="degree">B.S. Computer Science</div>
+                    <div class="school">University of Tech • 2017-2021</div>
+                </div>
+            </div>
+
+            <!-- Create Post Section -->
+            <div id="create-post-section" class="card create-post-card hidden">
+                <div class="create-post-input">
+                    <img src="Photo.png" class="mini-dp" alt="dp">
+                    <input type="text" id="open-post-modal" placeholder="Start a post..." readonly>
+                </div>
+                <div class="create-post-actions">
+                    <button class="action-btn" onclick="openModal('image')"><i class="fa-solid fa-image"></i>
+                        Photo</button>
+                    <button class="action-btn" onclick="openModal('video')"><i class="fa-solid fa-video"></i>
+                        Video</button>
+                    <button class="action-btn" onclick="openModal('document')"><i class="fa-solid fa-file-alt"></i>
+                        Document</button>
+                </div>
+            </div>
+
+            <!-- Post 1 -->
+            <div class="card delay-2">
+                <div class="post-header">
+                    <img src="Photo.png" class="mini-dp" alt="dp">
+                    <div class="post-meta">
+                        <h3>Aman Kumar</h3>
+                        <span>2 hours ago</span>
+                    </div>
+                </div>
+                <div class="post-text">
+                    Robots… with metabolism? 🤖
+                    Scientists at Columbia University have developed modular robots that can grow, heal, and adapt by
+                    “eating” parts from other machines.
+                    Using simple magnetic modules, they can self-assemble, change shape, and even repair themselves
+                    without human help.
+
+                    toward robots that mimic biology more resilient, autonomous, and alive than ever.
+
+
+                    💬 How far do you think this tech could go?
+
+
+                    Follow us now on our WhatsApp (https://lnkd.in/dfyZsVs6) and Telegram (t.me/ctorobotics) channels
+                    and stay updated about the cutting edge.
+
+
+                    🔗 Stay connected with all our content and updates across social media in one place
+                    here:https://lnkd.in/di9XYRaM
+
+                </div>
+                <!-- Added an image to the post for professional feel -->
+
+                <video src="post.mp4" class="video" controls></video>
+            </div>
+
+            <!-- Post 2 -->
+            <div class="card delay-3">
+                <div class="post-header">
+                    <img src="Photo.png" class="mini-dp" alt="dp">
+                    <div class="post-meta">
+                        <h3>Aman kumar</h3>
+                        <span>Yesterday</span>
+                    </div>
+                </div>
+                <div class="post-text">
+                    Exciting News! 🚀
+                    <video src="post2.mp4" class="video" controls></video>
+                </div>
+            </div>
+
+        </main>
+
+    </div>
+
+    <!-- Create Post Modal -->
+    <div id="post-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Create a Post</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="user-info">
+                    <img src="Photo.png" class="mini-dp" alt="dp">
+                    <span class="user-name">Aman Kumar</span>
+                </div>
+                <textarea id="post-text" placeholder="What do you want to talk about?"></textarea>
+
+                <div id="media-preview-container" class="media-preview hidden">
+                    <!-- Preview content will be injected here -->
+                    <span class="remove-media" onclick="removeMedia()">&times;</span>
+                </div>
+
+                <div class="modal-actions">
+                    <div class="media-inputs">
+                        <label for="file-input-image" class="media-icon"><i class="fa-solid fa-image"></i></label>
+                        <input type="file" id="file-input-image" accept="image/*" hidden
+                            onchange="handleFileSelect(this, 'image')">
+
+                        <label for="file-input-video" class="media-icon"><i class="fa-solid fa-video"></i></label>
+                        <input type="file" id="file-input-video" accept="video/*" hidden
+                            onchange="handleFileSelect(this, 'video')">
+
+                        <label for="file-input-doc" class="media-icon"><i class="fa-solid fa-file-alt"></i></label>
+                        <input type="file" id="file-input-doc" accept=".pdf,.doc,.docx,.txt" hidden
+                            onchange="handleFileSelect(this, 'document')">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="post-btn" class="post-btn" disabled>Post</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
