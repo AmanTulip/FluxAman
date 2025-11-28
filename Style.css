@@ -38,7 +38,17 @@ body {
 }
 
 /* --- Profile Sidebar (Left Panel) --- */
-.profile-section {
+/* --- Profile Sidebar (Left Panel) --- */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: fit-content;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.profile-card,
+.skills-card {
     background: var(--glass-bg);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -47,8 +57,6 @@ body {
     padding: 30px;
     text-align: center;
     box-shadow: var(--card-shadow);
-    height: fit-content;
-    animation: fadeIn 0.8s ease-out;
 }
 
 .profile-pic {
@@ -220,7 +228,7 @@ body {
     }
 
     /* Make Profile Sticky on Desktop */
-    .profile-section {
+    .sidebar {
         position: sticky;
         top: 40px;
         /* Sticks 40px from top of screen */
@@ -583,9 +591,7 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
-    margin-top: 25px;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    /* Removed top margin/border as it's now in its own card */
 }
 
 .skill-tag {

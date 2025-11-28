@@ -20,33 +20,41 @@
     <div class="container">
 
         <!-- LEFT PANEL: Profile Info -->
-        <aside class="profile-section">
-            <img src="Photo.png" alt="Profile" class="profile-pic">
-            <h1 class="name">Aman Kumar</h1>
-            <p class="role">UI/UX Designer & Developer</p>
+        <!-- LEFT PANEL: Sidebar -->
+        <aside class="sidebar">
+            <!-- Profile Card -->
+            <div class="profile-card">
+                <img src="Photo.png" alt="Profile" class="profile-pic">
+                <h1 class="name">Aman Kumar</h1>
+                <p class="role">UI/UX Designer & Developer</p>
 
-            <div class="location">
-                <i class="fa-solid fa-location-dot"></i> Delhi, India
+                <div class="location">
+                    <i class="fa-solid fa-location-dot"></i> Delhi, India
+                </div>
+
+                <div class="social-links">
+                    <a href="https://github.com/FluxAman" class="social-btn"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/FluxAman" class="social-btn"><i
+                            class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://youtube.com/@amanraoo?si=ZMXvrQxN1KgPMGWL" class="social-btn"><i
+                            class="fa-brands fa-brands fa-youtube"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-solid fa-envelope"></i></a>
+                    <button id="admin-trigger" class="social-btn" onclick="toggleAdmin()"><i
+                            class="fa-solid fa-lock"></i></button>
+                </div>
             </div>
 
-            <div class="social-links">
-                <a href="https://github.com/FluxAman" class="social-btn"><i class="fa-brands fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/FluxAman" class="social-btn"><i
-                        class="fa-brands fa-linkedin-in"></i></a>
-                <a href="https://youtube.com/@amanraoo?si=ZMXvrQxN1KgPMGWL" class="social-btn"><i
-                        class="fa-brands fa-brands fa-youtube"></i></a>
-                <a href="#" class="social-btn"><i class="fa-solid fa-envelope"></i></a>
-                <button id="admin-trigger" class="social-btn" onclick="toggleAdmin()"><i
-                        class="fa-solid fa-lock"></i></button>
-            </div>
-
-            <div class="skills-container">
-                <span class="skill-tag">UI/UX Design</span>
-                <span class="skill-tag">Frontend Dev</span>
-                <span class="skill-tag">Prototyping</span>
-                <span class="skill-tag">Motion Graphics</span>
-                <span class="skill-tag">React.js</span>
-                <span class="skill-tag">Figma</span>
+            <!-- Skills Card -->
+            <div class="skills-card">
+                <div class="section-title" style="font-size: 1.2rem; margin-bottom: 15px;">Skills</div>
+                <div class="skills-container">
+                    <span class="skill-tag">UI/UX Design</span>
+                    <span class="skill-tag">Frontend Dev</span>
+                    <span class="skill-tag">Prototyping</span>
+                    <span class="skill-tag">Motion Graphics</span>
+                    <span class="skill-tag">React.js</span>
+                    <span class="skill-tag">Figma</span>
+                </div>
             </div>
         </aside>
 
